@@ -1,2 +1,2 @@
 # managmentService_url
-repo for
+repo for managment service
