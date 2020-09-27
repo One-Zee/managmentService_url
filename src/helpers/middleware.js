@@ -2,7 +2,6 @@
  * loading dependencies
  */
 const validUrl = require('valid-url'); // is used for validating # URL #
-//const shortId = require('shortid'); 
 
 
 /**
@@ -23,10 +22,10 @@ exports.validity =async(req,res,next)=>{
     /**
      * Check if the # baseUrl # is valid or not   
      */
-    if(!validUrl.isUri(req.baseUrl)){
-        res.status(401).json("Base url is invalid.");
+    if(!validUrl.isUri(real_url)){
+        res.status(401).json("Url is invalid.");
     }   
-
+    
       // loading model # URL #
      if(validUrl.isUri(real_url)){
         URL.findOne({

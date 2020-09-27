@@ -19,6 +19,7 @@
   "homepage": "https://github.com/One-Zee/managmentService_url#readme",
   "dependencies": {
     "amqplib": "^0.6.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
     "mysql2": "^2.2.1",
