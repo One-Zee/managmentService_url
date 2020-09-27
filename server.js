@@ -29,12 +29,12 @@ app.use(helmet());
 /**
  * loading  # routes #
  */
-
+const url_routes = require('./src/routes/url_routes');
 
  /**
  * Initializing routes
  */
-
+app.use('/routes/url',url_routes);
 
  /**
  * Initializing and listening to # PORT #
