@@ -1,9 +1,4 @@
 /**
- * loading dependencies
- */
-const shortId = require('shortid'); 
-
-/**
  * loading model # URL #
  */
 const URL = require('../db/models/url_model');
@@ -20,14 +15,14 @@ exports.cr_shortUrl = async(req,res)=>{
     /**
      * Create url code   
      */
-    const urlCode =await shortId.generate();
+    //const urlCode =await shortId.generate();
 
     /**
      * Check if the # realUrl # is valid or not   
-     */
+     */console.log('shortUrl ##' + req.short_url)
         URL.create({
             real_url: real_url,
-            short_url: req.baseUrl + '/' + urlCode
+            short_url: req.short_url
         })
         .then((url)=>{
             producer(url.dataValues,true);
