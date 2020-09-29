@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 28, 2020 at 09:56 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Host: db
+-- Generation Time: Sep 29, 2020 at 03:09 PM
+-- Server version: 8.0.21
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,10 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `managment_service`
+-- Database: `management_service`
 --
-CREATE DATABASE IF NOT EXISTS `managment_service` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `managment_service`;
 
 -- --------------------------------------------------------
 
@@ -30,10 +29,10 @@ USE `managment_service`;
 --
 
 CREATE TABLE `url` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `real_url` varchar(10000) NOT NULL,
   `short_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
@@ -43,9 +42,7 @@ CREATE TABLE `url` (
 -- Indexes for table `url`
 --
 ALTER TABLE `url`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `short_url` (`short_url`),
-  ADD UNIQUE KEY `real_url` (`real_url`) USING HASH;
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -55,7 +52,7 @@ ALTER TABLE `url`
 -- AUTO_INCREMENT for table `url`
 --
 ALTER TABLE `url`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
