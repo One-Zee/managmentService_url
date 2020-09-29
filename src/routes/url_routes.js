@@ -7,14 +7,13 @@ const router = require('express').Router();
 /**
  * loading # Middleware #
  */
-const { validity, findID} = require('../helpers/middleware');
-
+const { validity, findID } = require('../helpers/middleware');
+const { genHash }=require('../helpers/checker');
 
 /**
  * loading # Controllers #
  */
 const { cr_shortUrl, del_shortUrl } = require('../controllers/url_ctrl');
-const { genHash } = require('../helpers/checker');
 
 
 /**

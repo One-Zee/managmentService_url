@@ -1,0 +1,5 @@
+FROM mysql:8
+ENV MYSQL_DATABASE userOne
+ENV MYSQL_ROOT_PASSWORD test123
+EXPOSE 3306
+COPY management_template.sql /docker-entrypoint-initdb.d/
