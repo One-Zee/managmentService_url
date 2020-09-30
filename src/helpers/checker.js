@@ -9,14 +9,18 @@ const URL = require('../db/models/url_model');
 const shortid = require('shortid');
 
 
-
+/**
+ *  middleware for generating hash part of short_url
+ */
 exports.genHash= async(req,res,next)=>{
     await check(req.baseUrl,false);
      req.short_url = obj.short_url;
      next();
   }
   
-  
+/**
+ *  recrusive function that ensures uniqueness of short_url
+ */
   let check = async function (base_url,bool) {
   let short_url = base_url + '/' + shortid.generate();
     await URL.findOne({

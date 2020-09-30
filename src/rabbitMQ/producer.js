@@ -14,7 +14,7 @@ const config = require('../../config');
 module.exports = async function conn(msgs,create){ 
 
     const queue = config.queueName;  // Queue name
-    const payload = [{create},msgs]; 
+    const payload = [{create},msgs]; // msg that will be sent to redirection service
     
     try{
         

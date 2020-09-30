@@ -20,9 +20,6 @@ exports.validity = async (req, res, next) => {
   /**
    * Check if the # realUrl # is valid or not   
    */
-  if (!validUrl.isUri(real_url)) {
-    res.status(401).json("Url is invalid.");
-  }
   if (validUrl.isUri(real_url)) {
     URL.findOne({
       where: { real_url },
@@ -36,8 +33,8 @@ exports.validity = async (req, res, next) => {
           res.status(200).end(JSON.stringify(url));
         }
       })
-      .catch((err) => {
-        res.status(400).end('SQL Error' +err);
+      .catch(() => {
+        res.status(400).end('SQL Error');
       });
   } else {
     res.status(400).end('Url is not valid');
@@ -45,6 +42,9 @@ exports.validity = async (req, res, next) => {
 
 }
 
+ /**
+   * Check if there is an # id # if not send apropriate response   
+   */
 exports.findID = (req, res, next) => {
   const { id } = req.params;
   URL.findOne({

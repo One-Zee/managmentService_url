@@ -1,6 +1,7 @@
 const config = {
 
     // # mysql # db config localhost 
+     // DATABASE_URL: 'localhost',
         DATABASE_URL: 'db',
         DATABASE_USERNAME: 'userOne',
         DATABASE_NAME: 'management_service', 
@@ -13,6 +14,7 @@ const config = {
     // connection settings for # rabitMQ # //   
         rabbitSettings : {
             protocol:'amqp',
+         // hostname: 'localhost',
             hostname:'rabbitmq',
             port: 5672,
             username:'guest',
