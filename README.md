@@ -20,7 +20,7 @@ Development is running at `http://localhost:4444` by default.
 
 ## Docker
 
-To run with docker checkout:
+To run both services with DOCKER checkout:
 - https://github.com/One-Zee/url_shortening
 
 API endpoints:
