@@ -13,9 +13,14 @@ const shortid = require('shortid');
  *  middleware for generating hash part of short_url
  */
 exports.genHash= async(req,res,next)=>{
-    await check(req.baseUrl,false);
-     req.short_url = obj.short_url;
-     next();
+    try {
+        await check(req.baseUrl,false);
+        req.short_url = obj.short_url;
+        next();  
+    } 
+    catch (error) {
+        console.log(error);
+    }
   }
   
 /**
